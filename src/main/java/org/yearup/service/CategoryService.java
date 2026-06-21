@@ -1,5 +1,6 @@
 package org.yearup.service;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.yearup.models.Category;
 import org.yearup.repository.CategoryRepository;
@@ -18,30 +19,29 @@ public class CategoryService
 
     public List<Category> getAllCategories()
     {
-        // get all categories
-        return null;
+        return categoryRepository.findAll();
     }
 
     public Category getById(int categoryId)
     {
-        // get category by id
-        return null;
+        return categoryRepository.findById(categoryId).orElse(null);
     }
 
     public Category create(Category category)
     {
-        // create a new category
-        return null;
+        return categoryRepository.save(category);
     }
 
-    public Category update(int categoryId, Category category)
+    public Category update(int categoryId, Category updatedCategory)
     {
-        // update category and return the updated category
-        return null;
+        Category existingCategory = categoryRepository.findById(categoryId).orElseThrow();
+        existingCategory.setName(updatedCategory.getName());
+        existingCategory.setDescription(updatedCategory.getDescription());
+        return categoryRepository.save(existingCategory);
     }
 
     public void delete(int categoryId)
     {
-        // delete category
+        categoryRepository.deleteById(categoryId);
     }
 }
