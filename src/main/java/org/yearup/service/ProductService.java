@@ -46,17 +46,18 @@ public class ProductService
         return productRepository.save(product);
     }
 
-    public Product update(int productId, Product product)
+    public Product update(int productId, Product updatedProduct)
     {
-        Product existing = productRepository.findById(productId).orElseThrow();
-        existing.setName(product.getName());
-        existing.setPrice(product.getPrice());
-        existing.setCategoryId(product.getCategoryId());
-        existing.setDescription(product.getDescription());
-        existing.setSubCategory(product.getSubCategory());
-        existing.setFeatured(product.isFeatured());
-        existing.setImageUrl(product.getImageUrl());
-        return productRepository.save(existing);
+        Product existingProduct = productRepository.findById(productId).orElseThrow();
+        existingProduct.setName(updatedProduct.getName());
+        existingProduct.setPrice(updatedProduct.getPrice());
+        existingProduct.setCategoryId(updatedProduct.getCategoryId());
+        existingProduct.setDescription(updatedProduct.getDescription());
+        existingProduct.setSubCategory(updatedProduct.getSubCategory());
+        existingProduct.setStock(updatedProduct.getStock());
+        existingProduct.setFeatured(updatedProduct.isFeatured());
+        existingProduct.setImageUrl(updatedProduct.getImageUrl());
+        return productRepository.save(existingProduct);
     }
 
     public void delete(int productId)

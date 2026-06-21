@@ -35,9 +35,7 @@ public class Product
     @Column(name = "image_url")
     private String imageUrl;
 
-    public Product()
-    {
-    }
+    public Product() {}
 
     public Product(int productId, String name, double price, int categoryId, String description, String subCategory, int stock, boolean isFeatured, String imageUrl)
     {
@@ -56,7 +54,6 @@ public class Product
     {
         return productId;
     }
-
     public void setProductId(int productId)
     {
         this.productId = productId;
@@ -66,7 +63,6 @@ public class Product
     {
         return name;
     }
-
     public void setName(String name)
     {
         this.name = name;
@@ -76,7 +72,6 @@ public class Product
     {
         return price;
     }
-
     public void setPrice(double price)
     {
         this.price = price;
@@ -86,7 +81,6 @@ public class Product
     {
         return categoryId;
     }
-
     public void setCategoryId(int categoryId)
     {
         this.categoryId = categoryId;
@@ -96,7 +90,6 @@ public class Product
     {
         return description;
     }
-
     public void setDescription(String description)
     {
         this.description = description;
@@ -106,7 +99,6 @@ public class Product
     {
         return subCategory;
     }
-
     public void setSubCategory(String subCategory)
     {
         this.subCategory = subCategory;
@@ -116,7 +108,6 @@ public class Product
     {
         return stock;
     }
-
     public void setStock(int stock)
     {
         this.stock = stock;
@@ -126,7 +117,6 @@ public class Product
     {
         return isFeatured;
     }
-
     public void setFeatured(boolean featured)
     {
         isFeatured = featured;
@@ -136,7 +126,6 @@ public class Product
     {
         return imageUrl;
     }
-
     public void setImageUrl(String imageUrl)
     {
         this.imageUrl = imageUrl;

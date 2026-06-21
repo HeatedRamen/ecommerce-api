@@ -20,14 +20,12 @@ public class CategoriesController
     private final CategoryService categoryService;
     private final ProductService productService;
 
-
-    // create an Autowired constructor to inject the categoryService and productService
     public CategoriesController(CategoryService categoryService, ProductService productService){
         this.categoryService = categoryService;
         this.productService = productService;
     }
 
-    // add the appropriate annotation for a get action
+    // Gets all categories
     @GetMapping("")
     @PreAuthorize("permitAll()")
     public List<Category> getAll()
@@ -40,11 +38,14 @@ public class CategoriesController
     @PreAuthorize("permitAll()")
     public Category getById(@PathVariable int id)
     {
+        // Search for id
         Category category = categoryService.getById(id);
 
+        // Throws not found if it doesn't exist
         if(category == null)
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
+        // Return category if it does exist
         return category;
     }
 
