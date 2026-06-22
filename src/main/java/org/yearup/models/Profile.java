@@ -34,9 +34,7 @@ public class Profile
     @Column(name = "zip")
     private String zip = "";
 
-    public Profile()
-    {
-    }
+    public Profile() {}
 
     public Profile(int userId, String firstName, String lastName, String phone, String email, String address, String city, String state, String zip)
     {
@@ -55,7 +53,6 @@ public class Profile
     {
         return userId;
     }
-
     public void setUserId(int userId)
     {
         this.userId = userId;
@@ -65,7 +62,6 @@ public class Profile
     {
         return firstName;
     }
-
     public void setFirstName(String firstName)
     {
         this.firstName = firstName;
@@ -75,7 +71,6 @@ public class Profile
     {
         return lastName;
     }
-
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
@@ -85,7 +80,6 @@ public class Profile
     {
         return phone;
     }
-
     public void setPhone(String phone)
     {
         this.phone = phone;
@@ -95,7 +89,6 @@ public class Profile
     {
         return email;
     }
-
     public void setEmail(String email)
     {
         this.email = email;
@@ -105,7 +98,6 @@ public class Profile
     {
         return address;
     }
-
     public void setAddress(String address)
     {
         this.address = address;
@@ -115,7 +107,6 @@ public class Profile
     {
         return city;
     }
-
     public void setCity(String city)
     {
         this.city = city;
@@ -125,7 +116,6 @@ public class Profile
     {
         return state;
     }
-
     public void setState(String state)
     {
         this.state = state;
@@ -135,7 +125,6 @@ public class Profile
     {
         return zip;
     }
-
     public void setZip(String zip)
     {
         this.zip = zip;

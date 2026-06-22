@@ -17,9 +17,7 @@ public class Category
     @Column(name = "description")
     private String description;
 
-    public Category()
-    {
-    }
+    public Category() {}
 
     public Category(int categoryId, String name, String description)
     {
@@ -32,7 +30,6 @@ public class Category
     {
         return categoryId;
     }
-
     public void setCategoryId(int categoryId)
     {
         this.categoryId = categoryId;
@@ -42,7 +39,6 @@ public class Category
     {
         return name;
     }
-
     public void setName(String name)
     {
         this.name = name;
@@ -52,7 +48,6 @@ public class Category
     {
         return description;
     }
-
     public void setDescription(String description)
     {
         this.description = description;

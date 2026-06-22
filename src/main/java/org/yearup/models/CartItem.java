@@ -24,7 +24,6 @@ public class CartItem
     {
         return cartItemId;
     }
-
     public void setCartItemId(int cartItemId)
     {
         this.cartItemId = cartItemId;
@@ -34,7 +33,6 @@ public class CartItem
     {
         return userId;
     }
-
     public void setUserId(int userId)
     {
         this.userId = userId;
@@ -44,7 +42,6 @@ public class CartItem
     {
         return productId;
     }
-
     public void setProductId(int productId)
     {
         this.productId = productId;
@@ -54,7 +51,6 @@ public class CartItem
     {
         return quantity;
     }
-
     public void setQuantity(int quantity)
     {
         this.quantity = quantity;

@@ -12,7 +12,6 @@ public class ShoppingCartItem
     {
         return product;
     }
-
     public void setProduct(Product product)
     {
         this.product = product;
@@ -22,7 +21,6 @@ public class ShoppingCartItem
     {
         return quantity;
     }
-
     public void setQuantity(int quantity)
     {
         this.quantity = quantity;
@@ -32,7 +30,6 @@ public class ShoppingCartItem
     {
         return discountPercent;
     }
-
     public void setDiscountPercent(double discountPercent)
     {
         this.discountPercent = discountPercent;
