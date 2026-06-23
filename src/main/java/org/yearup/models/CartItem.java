@@ -14,8 +14,9 @@ public class CartItem
     @Column(name = "user_id")
     private int userId;
 
-    @Column(name = "product_id")
-    private int productId;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @Column(name = "quantity")
     private int quantity = 1;
@@ -38,13 +39,13 @@ public class CartItem
         this.userId = userId;
     }
 
-    public int getProductId()
+    public Product getProduct()
     {
-        return productId;
+        return product;
     }
-    public void setProductId(int productId)
+    public void setProduct(Product product)
     {
-        this.productId = productId;
+        this.product = product;
     }
 
     public int getQuantity()
