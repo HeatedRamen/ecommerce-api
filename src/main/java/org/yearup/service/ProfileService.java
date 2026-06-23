@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.yearup.models.Profile;
 import org.yearup.repository.ProfileRepository;
 
+import java.util.List;
+
 @Service
 public class ProfileService
 {
@@ -18,4 +20,6 @@ public class ProfileService
     {
         return profileRepository.save(profile);
     }
+
+    public List<Profile> getAllProfile() { return profileRepository.findAll(); }
 }
