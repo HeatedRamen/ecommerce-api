@@ -28,11 +28,8 @@ public class ShoppingCartController
     @PreAuthorize("isAuthenticated()")
     public ShoppingCart getCart(Principal principal)
     {
-        // Get the currently logged in username
-        String userName = principal.getName();
-        // Find database user by username
-        User user = userService.getByUserName(userName);
-        int userId = user.getId();
+
+        int userId = getUserId(principal);
 
         // Use the shoppingCartService to get all items in the cart and return the cart
         return shoppingCartService.getByUserId(userId);
@@ -42,10 +39,7 @@ public class ShoppingCartController
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<ShoppingCart> addItemToCart(@PathVariable int productId, Principal principal){
 
-        String userName = principal.getName();
-
-        User user = userService.getByUserName(userName);
-        int userId = user.getId();
+        int userId = getUserId(principal);
 
         ShoppingCart added = shoppingCartService.addProductById(userId, productId);
         return ResponseEntity.status(HttpStatus.CREATED).body(added);
@@ -55,10 +49,7 @@ public class ShoppingCartController
     @PreAuthorize("isAuthenticated()")
     public ShoppingCart updateProduct(@PathVariable int productId, @RequestBody ShoppingCartItem updatedShoppingCartItem, Principal principal){
 
-        String userName = principal.getName();
-
-        User user = userService.getByUserName(userName);
-        int userId = user.getId();
+        int userId = getUserId(principal);
 
         return shoppingCartService.update(userId, productId, updatedShoppingCartItem);
     }
@@ -66,12 +57,18 @@ public class ShoppingCartController
     @DeleteMapping
     public ResponseEntity<ShoppingCart> clearCart(Principal principal){
 
-        String userName = principal.getName();
-
-        User user = userService.getByUserName(userName);
-        int userId = user.getId();
+        int userId = getUserId(principal);
 
         ShoppingCart cart = shoppingCartService.clear(userId);
         return ResponseEntity.ok(cart);
+    }
+
+    // Helper to get User ID
+    private int getUserId(Principal principal){
+
+        String userName = principal.getName();
+
+        User user = userService.getByUserName(userName);
+        return user.getId();
     }
 }
