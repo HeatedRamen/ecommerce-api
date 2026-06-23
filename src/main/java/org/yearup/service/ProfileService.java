@@ -5,6 +5,7 @@ import org.yearup.models.Profile;
 import org.yearup.repository.ProfileRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProfileService
@@ -21,5 +22,21 @@ public class ProfileService
         return profileRepository.save(profile);
     }
 
-    public List<Profile> getAllProfile() { return profileRepository.findAll(); }
+    public Optional<Profile> getProfileById(int userId){ return profileRepository.findById(userId); }
+
+    public Profile updateProfile(int userId, Profile updateProfile){
+
+        Profile existingProfile = getProfileById(userId).orElseThrow();
+
+        existingProfile.setFirstName(updateProfile.getFirstName());
+        existingProfile.setLastName(updateProfile.getLastName());
+        existingProfile.setPhone(updateProfile.getPhone());
+        existingProfile.setEmail(updateProfile.getEmail());
+        existingProfile.setAddress(updateProfile.getAddress());
+        existingProfile.setCity(updateProfile.getCity());
+        existingProfile.setState(updateProfile.getState());
+        existingProfile.setZip(updateProfile.getZip());
+
+        return profileRepository.save(existingProfile);
+    }
 }
