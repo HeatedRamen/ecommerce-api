@@ -54,7 +54,7 @@ public class OrderService {
         Profile userProfile = profileService.getProfileById(userId)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
-                        "Profile not found"));;
+                        "Profile not found"));
 
         order.setAddress(userProfile.getAddress());
         order.setCity(userProfile.getCity());
