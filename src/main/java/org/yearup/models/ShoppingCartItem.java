@@ -8,32 +8,14 @@ public class ShoppingCartItem
     private int quantity = 1;
     private double discountPercent = 0;
 
-    public Product getProduct()
-    {
-        return product;
-    }
-    public void setProduct(Product product)
-    {
-        this.product = product;
-    }
+    public Product getProduct() { return product; }
+    public void setProduct(Product product) { this.product = product; }
 
-    public int getQuantity()
-    {
-        return quantity;
-    }
-    public void setQuantity(int quantity)
-    {
-        this.quantity = quantity;
-    }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public double getDiscountPercent()
-    {
-        return discountPercent;
-    }
-    public void setDiscountPercent(double discountPercent)
-    {
-        this.discountPercent = discountPercent;
-    }
+    public double getDiscountPercent() { return discountPercent; }
+    public void setDiscountPercent(double discountPercent) { this.discountPercent = discountPercent; }
 
     @JsonIgnore
     public int getProductId()

@@ -59,40 +59,20 @@ public class User {
       this.activated = true;
    }
 
-   public int getId() {
-      return id;
-   }
-   public void setId(int id) {
-      this.id = id;
-   }
+   public int getId() { return id; }
+   public void setId(int id) { this.id = id; }
 
-   public String getUsername() {
-      return username;
-   }
-   public void setUsername(String username) {
-      this.username = username;
-   }
+   public String getUsername() { return username; }
+   public void setUsername(String username) { this.username = username; }
 
-   public String getPassword() {
-      return password;
-   }
-   public void setPassword(String password) {
-      this.password = password;
-   }
+   public String getPassword() { return password; }
+   public void setPassword(String password) { this.password = password; }
 
-   public boolean isActivated() {
-      return activated;
-   }
-   public void setActivated(boolean activated) {
-      this.activated = activated;
-   }
+   public boolean isActivated() { return activated; }
+   public void setActivated(boolean activated) { this.activated = activated; }
 
-   public Set<Authority> getAuthorities() {
-      return authorities;
-   }
-   public void setAuthorities(Set<Authority> authorities) {
-      this.authorities = authorities;
-   }
+   public Set<Authority> getAuthorities() { return authorities; }
+   public void setAuthorities(Set<Authority> authorities) { this.authorities = authorities; }
 
    public void setAuthorities(String authorities) {
       this.role = authorities;
