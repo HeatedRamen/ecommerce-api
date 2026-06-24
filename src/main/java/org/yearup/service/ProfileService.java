@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import org.yearup.models.Profile;
 import org.yearup.repository.ProfileRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
