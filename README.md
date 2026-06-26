@@ -12,6 +12,7 @@
     </ol>
 </details>
 
+![Home Screen](docs/screenshots/home-page.png)
 
 ## Description 🔎
 EasyShop is a full stack e-commerce application built with Java and Spring Boot. The application provides a RESTful API for 
@@ -66,6 +67,9 @@ services, repositories, and domain models.
 - #### Build Tools
   - Maven
 
+## Database Structure 
+![Database Diagram](docs/screenshots/database-diagram.png)
+
 ## How to Run 🏃
 
 ### Prerequisites
@@ -109,7 +113,54 @@ The application will start on:
 http://localhost:8080
 ```
 
+### Prerequisites
+
+* Java 17+
+* Maven
+* MySQL
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/easyshop.git
+cd easyshop
+```
+
+### Configure Database
+
+Update your database credentials in:
+
+```properties
+src/main/resources/application.properties
+```
+
+Example:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/easyshop
+spring.datasource.username=root
+spring.datasource.password=password
+```
+
+### Run the Application
+
+```bash
+mvn spring-boot:run
+```
+
+The application will start on:
+
+```text
+http://localhost:8080
+```
+
 ## Examples 👀
+![Login API](docs/screenshots/user-login.png)
+![Product Filtered Search API](docs/screenshots/get-product-with-filter.png)
+![Shopping Cart API ](docs/screenshots/get-shopping-cart.png)
+![Shopping Cart Menu](docs/screenshots/shopping-cart.png)
+![Order API](docs/screenshots/order-example.png)
+
 
 ## Author
 #### Kevin Nguyen 
