@@ -55,6 +55,7 @@ public class ShoppingCartController
     }
 
     @DeleteMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<ShoppingCart> clearCart(Principal principal){
 
         int userId = getUserId(principal);

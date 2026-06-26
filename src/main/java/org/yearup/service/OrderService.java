@@ -60,7 +60,7 @@ public class OrderService {
         order.setCity(userProfile.getCity());
         order.setState(userProfile.getState());
         order.setZip(userProfile.getZip());
-        order.setShippingAmount(BigDecimal.valueOf(15));
+        order.setShippingAmount(BigDecimal.valueOf(0));
 
         orderRepository.save(order);
         return order;

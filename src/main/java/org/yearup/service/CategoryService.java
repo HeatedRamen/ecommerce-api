@@ -1,6 +1,5 @@
 package org.yearup.service;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.yearup.models.Category;
 import org.yearup.repository.CategoryRepository;
