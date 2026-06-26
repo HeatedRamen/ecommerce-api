@@ -6,6 +6,7 @@
       <li> Description </li>
       <li> Features </li>
       <li> Technolgies Used </li>
+      <li> Database Structure </li>
       <li> How to Run </li>
       <li> Examples </li>
       <li> Author </li>
@@ -156,11 +157,20 @@ http://localhost:8080
 
 ## Examples 👀
 ![Login API](docs/screenshots/user-login.png)
-![Product Filtered Search API](docs/screenshots/get-product-with-filter.png)
-![Shopping Cart API ](docs/screenshots/get-shopping-cart.png)
-![Shopping Cart Menu](docs/screenshots/shopping-cart.png)
-![Order API](docs/screenshots/order-example.png)
+Users can authenticate by submitting valid credentials to the login endpoint. Upon successful authentication, the API generates and returns a JWT token, which is used to authorize access to protected resources throughout the application.
 
+![Product Filtered Search API](docs/screenshots/get-product-with-filter.png)
+The product search endpoint supports dynamic filtering by category, price range, color, and additional product attributes. This functionality was implemented using Spring Data JPA and custom repository queries to provide flexible product discovery.  
+
+![Shopping Cart API ](docs/screenshots/get-shopping-cart.png)
+The shopping cart interface displays products added by the user, including item quantities, pricing information, and calculated totals. Cart updates are persisted through backend API endpoints and reflected in real time within the user interface.  
+
+![Shopping Cart Menu](docs/screenshots/shopping-cart.png)
+
+The shopping cart endpoint retrieves all items associated with the authenticated user, including product details and quantities. Custom JPA queries were used to efficiently load cart items and related product information in a single request.  
+
+![Order API](docs/screenshots/order-example.png)
+The order endpoint processes customer purchases by converting shopping cart items into order records and associated line items. The implementation validates order information, stores purchase history, and maintains relationships between orders, products, and users.
 
 ## Author
 #### Kevin Nguyen 
